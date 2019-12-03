@@ -57,9 +57,6 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DATA) ./root/usr/share/adbyby/dnsmasq.esc $(1)/usr/share/adbyby/dnsmasq.esc
 	$(INSTALL_DATA) ./root/usr/share/adbyby/rules.txt $(1)/usr/share/adbyby/rules.txt
 	$(INSTALL_DATA) ./root/usr/share/adbyby/adbyby_local $(1)/usr/share/adbyby/adbyby_local
-	$(INSTALL_BIN) ./root/usr/share/adbyby/adbyby.sh $(1)/usr/share/adbyby/
-	$(INSTALL_BIN) ./root/usr/share/adbyby/adbybyfirst.sh $(1)/usr/share/adbyby/
-	$(INSTALL_BIN) ./root/usr/share/adbyby/adbybyupdate.sh $(1)/usr/share/adbyby/
 	$(INSTALL_CONF) ./root/usr/share/adbyby/adhook.ini $(1)/usr/share/adbyby/
 	$(INSTALL_CONF) ./root/usr/share/adbyby/user.action $(1)/usr/share/adbyby/
 	$(INSTALL_DIR) $(1)/usr/share/adbyby/data
