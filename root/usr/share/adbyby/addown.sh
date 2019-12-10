@@ -47,7 +47,7 @@
 
 	rm -f /usr/share/adbyby/adbyby /usr/share/adbyby/md5 /usr/share/adbyby/adbyby_adblock/dnsmasq.adblock
 	while : ; do
-		wget-ssl -T 3 -O /usr/share/adbyby/adbyby https://cdn.jsdelivr.net/gh/small-5/adbyby/$ARCH
+		wget-ssl -T 3 -O /usr/share/adbyby/adbyby https://dev.tencent.com/u/Small_5/p/adbyby/git/raw/master/$ARCH
 		if [ "$?" == "0" ];then
 			chmod +x /usr/share/adbyby/adbyby
 			break
@@ -57,7 +57,7 @@
 	done
 
 	while : ; do
-		wget-ssl -T 3 -O /usr/share/adbyby/md5 https://cdn.jsdelivr.net/gh/small-5/adbyby/md5
+		wget-ssl -T 3 -O /usr/share/adbyby/md5 https://dev.tencent.com/u/Small_5/p/adbyby/git/raw/master/md5
 		if [ "$?" == "0" ];then
 			break
 		else
@@ -96,12 +96,12 @@
 	if [ "$(uci -q get adbyby.@adbyby[0].wan_mode)" == "1" ];then
 		mkdir -p /usr/share/adbyby/adbyby_adblock
 		while : ; do
-			wget-ssl -T 3 -O /usr/share/adbyby/adbyby_adblock/dnsmasq.adblock https://cdn.jsdelivr.net/gh/small-5/adbyby/dnsmasq.adblock
+			wget-ssl -T 3 -O /usr/share/adbyby/adbyby_adblock/dnsmasq.adblock https://dev.tencent.com/u/Small_5/p/adbyby/git/raw/master/dnsmasq.adblock
 			[ "$?" == "0" ] && break || sleep 2
 		done
 
 		while : ; do
-			wget-ssl -T 3 -O /usr/share/adbyby/md5 https://cdn.jsdelivr.net/gh/small-5/adbyby/md5_1
+			wget-ssl -T 3 -O /usr/share/adbyby/md5 https://dev.tencent.com/u/Small_5/p/adbyby/git/raw/master/md5_1
 			if [ "$?" == "0" ];then
 				break
 			else
