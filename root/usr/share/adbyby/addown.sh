@@ -46,7 +46,7 @@
 
 	rm -f /usr/share/adbyby/adbyby /usr/share/adbyby/md5 /usr/share/adbyby/adbyby_adblock/dnsmasq.adblock
 	while : ; do
-		wget -T 3 -O /usr/share/adbyby/adbyby https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/$ARCH
+		wget --no-hsts -T 3 -O /usr/share/adbyby/adbyby https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/$ARCH
 		if [ "$?" == "0" ];then
 			chmod +x /usr/share/adbyby/adbyby
 			break
@@ -56,7 +56,7 @@
 	done
 
 	while : ; do
-		wget -T 3 -O /usr/share/adbyby/md5 https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/md5
+		wget --no-hsts -T 3 -O /usr/share/adbyby/md5 https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/md5
 		if [ "$?" == "0" ];then
 			break
 		else
@@ -71,7 +71,7 @@
 
 	if [ "$(head -1 /usr/share/adbyby/data/lazy.txt | awk -F' ' '{print $3,$4}')" == "2017-1-2 00:12:25" ];then
 		while : ; do
-			wget -T 3 -O /tmp/lazy.txt https://cdn.jsdelivr.net/gh/adbyby/xwhyc-rules/lazy.txt
+			wget --no-hsts -T 3 -O /tmp/lazy.txt https://cdn.jsdelivr.net/gh/adbyby/xwhyc-rules/lazy.txt
 			if [ "$?" == "0" ];then
 				cp -f /tmp/lazy.txt /usr/share/adbyby/data/lazy.txt
 				rm -f /tmp/lazy.txt
@@ -81,7 +81,7 @@
 			fi
 		done
 		while : ; do
-			wget -T 3 -O /tmp/video.txt https://cdn.jsdelivr.net/gh/adbyby/xwhyc-rules/video.txt
+			wget --no-hsts -T 3 -O /tmp/video.txt https://cdn.jsdelivr.net/gh/adbyby/xwhyc-rules/video.txt
 			if [ "$?" == "0" ];then
 				cp -f /tmp/video.txt /usr/share/adbyby/data/video.txt
 				rm -f /tmp/video.txt
@@ -95,12 +95,12 @@
 	if [ "$(uci -q get adbyby.@adbyby[0].wan_mode)" == "1" ];then
 		mkdir -p /usr/share/adbyby/adbyby_adblock
 		while : ; do
-			wget -T 3 -O /usr/share/adbyby/adbyby_adblock/dnsmasq.adblock https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/dnsmasq.adblock
+			wget --no-hsts -T 3 -O /usr/share/adbyby/adbyby_adblock/dnsmasq.adblock https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/dnsmasq.adblock
 			[ "$?" == "0" ] && break || sleep 2
 		done
 
 		while : ; do
-			wget -T 3 -O /usr/share/adbyby/md5 https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/md5_1
+			wget --no-hsts -T 3 -O /usr/share/adbyby/md5 https://small_5.coding.net/p/adbyby/d/adbyby/git/raw/master/md5_1
 			if [ "$?" == "0" ];then
 				break
 			else
